@@ -4,13 +4,15 @@
     <title>DOM Manipulation</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1">
-    <button id="BUTTON">Click Me</button>
+</head>
+<body>
+    <p id="BUTTON" onclick="GenerateSentence()">Click me!!</p>
+    <button id = "BUTTON" onclick="GenerateSentence()">CLICKKK</button>
     <script>
         function getRandomInt(max) {
-            console.log(Math.floor(Math.random() * Math.floor(max)))
         return Math.floor(Math.random() * Math.floor(max));
         }
-        function buttonFunction() {
+        function GenerateSentence() {
             //The adjective noun verb adverb.
             var sentence = "The ";
             var adjectiveArray = [["large", "small", "pretty", "colourful", "broad", "hyper"], 
@@ -27,16 +29,11 @@
             sentence = sentence + adjectiveArray[2][getRandomInt(5)] + " ";
             sentence = sentence + adjectiveArray[3][getRandomInt(5)] + ".";
 
-            alert(sentence)
-
+           document.writeln("\n", sentence)
         }
-       /* function buttonFunction(buttonS) {
-            buttonS.addEventListener("DOMContentLoaded", GenerateSentence())
-        } */
-        document.getElementById('BUTTON').innerHTML = buttonFunction();
     </script>
-</head>
-<body>
+
+    <div>sentence</div>
 
 </body>
 </html>
