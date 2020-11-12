@@ -4,34 +4,39 @@
     <title>DOM Manipulation</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale = 1">
-    <button onlcick="buttonFunction()">Click Me</button>
+    <button id="BUTTON">Click Me</button>
     <script>
-        function buttonFunction() {
-            button.addEventListener("DOMContentLoaded", GenerateSentence())
-        }
         function getRandomInt(max) {
+            console.log(Math.floor(Math.random() * Math.floor(max)))
         return Math.floor(Math.random() * Math.floor(max));
-}
-        function GenerateSentence() {
+        }
+        function buttonFunction() {
             //The adjective noun verb adverb.
-            var sentence = string;
+            var sentence = "The ";
             var adjectiveArray = [["large", "small", "pretty", "colourful", "broad", "hyper"], 
-            ["ball", "field", "house", "party", "car", "girl"], ["doing", "rolling", "talking", "jumping", "moving", "writing"]
+            ["ball", "field", "house", "party", "car", "girl"], 
+            ["doing", "rolling", "talking", "jumping", "moving", "writing"],
             ["cleverly", "correctly", "cautiously", "awkwardly", "deeply", "acidentally"]];
+
             var nounArray = ["ball", "field", "house", "party", "car", "girl"];
             var verbArray = ["doing", "rolling", "talking", "jumping", "moving", "writing"];
             var adverbArray = ["cleverly", "correctly", "cautiously", "awkwardly", "deeply", "acidentally"];
+        
+            sentence = sentence + adjectiveArray[0][getRandomInt(5)] + " ";
+            sentence = sentence + adjectiveArray[1][getRandomInt(5)] + " ";
+            sentence = sentence + adjectiveArray[2][getRandomInt(5)] + " ";
+            sentence = sentence + adjectiveArray[3][getRandomInt(5)] + ".";
 
-
-            for (var i = 0; i <= 5; i++) {
-                var index = getRandomInt(6)
-                sentence += adjectiveArray[i][index]
-            }
-            console.log(sentence)
+            alert(sentence)
 
         }
+       /* function buttonFunction(buttonS) {
+            buttonS.addEventListener("DOMContentLoaded", GenerateSentence())
+        } */
+        document.getElementById('BUTTON').innerHTML = buttonFunction();
     </script>
-
-
 </head>
+<body>
+
+</body>
 </html>
